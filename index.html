@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Script&display=swap" rel="stylesheet">
     
 </head>
 <body>
@@ -17,6 +18,13 @@
                 <img src="assets/logo.png" alt="Gustoso Bakery Logo">
             </div>
             <nav>
+                <div class="three col">
+                    <div class="hamburger">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </div>
+                </div>
                 <ul>
                     <li><a href="#">welcome</a></li>
                     <li><a href="#">menu</a></li>
@@ -24,27 +32,29 @@
                     <li><a href="#">news</a></li>
                     <li><a href="#">contact</a></li>
                 </ul>
+                <ul class="socialMedia">
+                    <li><a href="">twitter</a></li>
+                    <li><a href="">facebook</a></li>
+                    <li><a href="">instagram</a></li>
+                </ul>
             </nav>
-            <ul class="socialMedia">
-                <li><a href="">twitter</a></li>
-                <li><a href="">facebook</a></li>
-                <li><a href="">instagram</a></li>
-            </ul>
         </div>
-        <h1>Pastry with love</h1>
-        <p>We’re bringing you fresh ingredients every day in ways you can’t resist.</p>
-        <div class="btn">Our menu</div>
+        <div class="content">
+            <h1>Pastry with love</h1>
+            <p>We’re bringing you fresh ingredients every day in ways you can’t resist.</p>
+            <div class="btn">Our menu</div>
+        </div>
 
     </header>
     <section class="artOfCakeSection">
-        <div>
+        <div class="chef">
             <h2 class="title">Art of cakes</h2>
             <h3>We create delicious memories</h3>
-            <p>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed.</p>
-            <p>Chef Cook</p>
+            <p class="opinion">Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed.</p>
+            <p class="chefCook">Chef Cook</p>
                 <div class="avatar">
                     <span>Bennito</span>
-                    <img src="avatar" alt="Check Cook Benito Gaspare">
+                    <div class="chef"></div>
                     <span>Gaspare</span>
                 </div>
             <blockquote>
@@ -52,12 +62,12 @@
                 occasions.
             </blockquote>
         </div>
-        <div>
-            <img src="" alt="" class="mainDish">
-            <img src="" alt="" class="mainDish">
-            <img src="" alt="" class="mainDish">
-            <img src="" alt="" class="mainDish">
-            <spam>Tastes so good!</spam>
+        <div class="thumbnails">
+            <div class="badge">Tastes so <br>good!</div>
+            <img src="assets/art-of-cake/bake.png" alt="bake" class="c">
+            <img src="assets/art-of-cake/eggs.png" alt="bake with eggs" class="mainDish">
+            <img src="assets/art-of-cake/cake.png" alt="cake" class="mainDish">
+            <img src="assets/art-of-cake/cake-with-strawberry.png" alt="cake with strawberry" class="mainDish">
         </div>
     </section>
     <section class="perfectPancakes">
@@ -180,6 +190,6 @@
             <li><a href="">Visit us</a></li>
         </ul>
     </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>

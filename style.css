@@ -2,18 +2,240 @@
     --whbackground: #fcfcf9;
     --clSubtitle: #a47d5e;
     --clAdd: #dfc691;
-    --btnColor: #56534c6b;
+    --btnColor: rgba(86, 83, 76, 0.51);
+    --mainFont: 'Alegreya', serif;
+    --fontsize1: 94px;
+    --fontsize2: 48px;
+    --fontsize3: 30px;
+    --fontpara: 24px;
+    --fontsubtitle: 14px;
 }
 *{
-    font-family: 'Alegreya', serif;
     margin: 0;
     padding: 0;
+/*    border: 1px solid red;*/
 }
 
 header{
-    background: var(--whbackground) url("assets/hero/mobile-background.webp") no-repeat center;
+    background: var(--whbackground) url("assets/hero/background-header.webp") no-repeat center;
     height: 640px;
+    display: flex;
+    flex-direction: column;
 }
 .navbar{
+    position: relative;
+    z-index: 2;
     background-color: var(--btnColor);
+    display: flex;
+    height: 44px;
+    padding: 15px 15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+nav.active{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    margin:0;
+    background-color: #2c3e50;
+}
+nav {
+    list-style-type:none;
+    display: flex;
+    flex-direction: column;
+}
+nav ul{ display: none}
+
+/*hamburger*/
+.row .three{
+    padding: 80px 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+}
+
+.hamburger .line{
+    width: 50px;
+    height: 5px;
+    background-color: var(--whbackground);
+    display: block;
+    margin: 8px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger:hover{
+    cursor: pointer;
+}
+
+.hamburger.isactive .line:nth-child(2){
+    opacity: 0;
+}
+
+.hamburger.isactive .line:nth-child(1){
+    -webkit-transform: translateY(13px) rotate(45deg);
+    -ms-transform: translateY(13px) rotate(45deg);
+    -o-transform: translateY(13px) rotate(45deg);
+    transform: translateY(13px) rotate(45deg);
+}
+
+.hamburger.isactive .line:nth-child(3){
+    -webkit-transform: translateY(-13px) rotate(-45deg);
+    -ms-transform: translateY(-13px) rotate(-45deg);
+    -o-transform: translateY(-13px) rotate(-45deg);
+    transform: translateY(-13px) rotate(-45deg);
+}
+.content{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
+    align-items: center;
+
+}
+.content > h1{
+    font: var(--mainFont);
+    color: var(--whbackground);
+    font-size: var(--fontsize1);
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+    letter-spacing: 7.5px;
+}
+.content > h1:after{
+    content: "";
+    position: absolute;
+    background-image: url("assets/hero/dashed-lines.png");
+    width: 190px;
+    height: 12px;
+    margin: 0 auto;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+}
+.content > p{
+    color: var(--whbackground);
+    font: var(--fontpara) var(--mainFont);
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+.btn{
+    position: relative;
+    margin: 0;
+    width: 204px;
+    height: 48px;
+    font: 14px var(--mainFont);
+    text-align: center;
+    line-height: 40px;
+    background-color:var(--btnColor);
+    text-transform: uppercase;
+    color: var(--whbackground);
+    cursor: pointer;
+}
+
+.artOfCakeSection{
+    background: var(--whbackground);
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.artOfCakeSection .title{
+    font: bold var(--fontsize2) var(--mainFont);
+    text-align: center;
+}
+.artOfCakeSection h3{
+    font: var(--fontsubtitle) var(--mainFont);
+    color: var(--clSubtitle);
+    text-transform: uppercase;
+    text-align: center;
+}
+.artOfCakeSection .opinion{
+    font: var(--fontsubtitle);
+    letter-spacing: 1px;
+    margin: 20px 0;
+}
+.artOfCakeSection .chefCook{
+    font:var(--fontpara);
+    font-weight: bold;
+    margin: 50px 0;
+}
+.chef{
+    max-width: 485px;
+    text-align: center;
+}
+.avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.avatar span{
+    position: relative;
+    border-top: 1px solid var(--btnColor);
+    border-bottom: 1px solid var(--btnColor);
+    padding: 20px 20px;
+}
+.avatar .chef{
+    width: 100px;
+    height: 100px;
+    border: 5px solid var(--whbackground);
+    border-radius: 60px;
+    background:url("assets/art-of-cake/avatar.png") -40px -10px no-repeat;
+}
+blockquote{
+    margin: 20px 0;
+    font-size: var(--fontpara);
+    font-family: 'League Script', cursive;
+    position: relative;
+    align-self: center;
+}
+blockquote:before, blockquote:after{
+    content: '"';
+    font-size: var(--fontsize1);
+}
+blockquote:after{
+    position: absolute;
+    bottom: -15px;
+}
+.thumbnails{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 610px;
+    margin: 0 auto;
+}
+.thumbnails .badge{
+    display: flex;
+    background: url("assets/art-of-cake/Vektor-Smartobjekt.png") no-repeat center;
+    width: 279px;
+    height: 279px;
+    justify-content: center;
+    align-items: center;
+    color: rgba(201, 177, 118, 0.72);
+    font: var(--fontsize3) var(--mainFont);
+    text-transform: uppercase;
+    position: absolute;
+    text-align: center;
+}
+.mainDish{
+    margin: 10px 0;
+}
+/*blockquote:before{*/
+/*}*/
+/*blockquote:after{*/
+/*}*/
+@media screen and (min-width: 1700px) {
+    header {
+        background-size: cover;
+    }
 }
