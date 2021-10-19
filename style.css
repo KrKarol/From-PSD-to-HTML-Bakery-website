@@ -140,7 +140,7 @@ nav ul{ display: none}
     height: 48px;
     font: 14px var(--mainFont);
     text-align: center;
-    line-height: 40px;
+    line-height: 48px;
     background-color:var(--btnColor);
     text-transform: uppercase;
     color: var(--whbackground);
@@ -156,7 +156,7 @@ nav ul{ display: none}
     padding: 105px 0;
 }
 .artOfCakeSection .title{
-    font: bold var(--fontsizbe2) var(--mainFont);
+    font: bold var(--fontsize2) var(--mainFont);
     text-align: center;
 }
 .artOfCakeSection h3{
@@ -247,7 +247,6 @@ blockquote:after{
     padding: 140px 0 110px 0;
 }
 .perfectPancakes .dishImg{
-    width: ;
     max-width: 419px ;
 }
 .perfectPancakes .dishDescription{
@@ -277,6 +276,7 @@ blockquote:after{
 .dishDescription p{
     font: var(--mainFont);
     letter-spacing: 1px;
+    margin-top: -100px;
 }
 .perfectPancakes .sliders{
     display: flex;
@@ -339,6 +339,98 @@ blockquote:after{
     font: bold var(--fontpara) var(--mainFont);
     color: #979285;
 }
+
+.breakfast{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: var(--whbackground) url("assets/Breakfast/breakfast-bg.png") no-repeat center ;
+    background-size: cover;
+    padding: 90px 0 80px 0;
+}
+.breakfast .priceList{
+    text-align: center;
+}
+.breakfast .priceList > h2{
+    font: bold var(--fontsize2) var(--mainFont);
+    color: var(--whbackground);
+    letter-spacing: 3px;
+}
+.breakfast .subtitles{
+    font: bold var(--fontsubtitle) var(--mainFont);
+    color: var(--clSubtitle);
+    text-transform: uppercase;
+}
+.breakfast .nameofDish{
+    font: var(--fontsize3) var(--mainFont);
+    color: var(--whbackground);
+}
+.breakfast .description{
+    font: 16px var(--mainFont);
+    color: #c2beba;
+}
+.breakfast .price{
+    font: var(--fontsize2) var(--mainFont);
+    color: var(--clAdd);
+}
+.breakfast .info{
+    background: var(--whbackground) url("assets/Breakfast/vektor-smartobjekt.png") no-repeat;
+    background-position: 330px 107%;
+    max-width: 438px;
+    padding: 20px 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    outline: 1px dashed #9e9c93;
+    outline-offset: -10px;
+    margin: 50px 20px;
+}
+.breakfast .info .infoHead{
+    height: 95px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    margin-bottom: 110px;
+    width: 100%;
+}
+.breakfast .info .infoHead:before{
+    content: "";
+    background-image: url("assets/Breakfast/ornament.png");
+    width: 367px;
+    height: 60px;
+    position: absolute;
+    top: 65px;
+}
+.breakfast .info .infoHead span{
+    font-size: var(--fontsubtitle);
+    text-transform: uppercase;
+}
+.breakfast .info .infoDesc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.breakfast .info .infoDesc h2{
+    font: bold var(--fontsize2) var(--mainFont);
+    color: #56534c;
+    margin-bottom: 45px;
+}
+.breakfast .info .infoDesc p{
+    line-height: 30px;
+    letter-spacing: 2px;
+    margin: 56px 0;
+}
+.breakfast .info .infoDesc .btn{
+    color: var(--clAdd);
+    font-weight: bold;
+    background-color: transparent;
+    margin-bottom: 55px;
+    border: 1px solid var(--arrColorhover);
+}
 @media screen and (min-width: 1200px) {
     header {
         background-size: cover;
@@ -354,8 +446,11 @@ blockquote:after{
     }
     .dishDescription > .cookTime{
         position: absolute;
-        right: -150px;
+        right: -120px;
         top: -70px;
+    }
+    .dishDescription p{
+        margin: 0;
     }
 
 }
