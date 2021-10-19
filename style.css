@@ -2,6 +2,8 @@
     --whbackground: #fcfcf9;
     --clSubtitle: #a47d5e;
     --clAdd: #dfc691;
+    --arrColor: #d8bba3;
+    --arrColorhover: #56534c;
     --btnColor: rgba(86, 83, 76, 0.51);
     --mainFont: 'Alegreya', serif;
     --fontsize1: 94px;
@@ -9,11 +11,15 @@
     --fontsize3: 30px;
     --fontpara: 24px;
     --fontsubtitle: 14px;
+
 }
 *{
     margin: 0;
     padding: 0;
 /*    border: 1px solid red;*/
+}
+section{
+    margin:0 auto;
 }
 
 header{
@@ -145,11 +151,12 @@ nav ul{ display: none}
     background: var(--whbackground);
     padding: 50px 0;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: space-between;
+    padding: 105px 0;
 }
 .artOfCakeSection .title{
-    font: bold var(--fontsize2) var(--mainFont);
+    font: bold var(--fontsizbe2) var(--mainFont);
     text-align: center;
 }
 .artOfCakeSection h3{
@@ -171,6 +178,8 @@ nav ul{ display: none}
 .chef{
     max-width: 485px;
     text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 .avatar{
     display: flex;
@@ -210,9 +219,7 @@ blockquote:after{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    position: relative;
     max-width: 610px;
-    margin: 0 auto;
 }
 .thumbnails .badge{
     display: flex;
@@ -230,12 +237,125 @@ blockquote:after{
 .mainDish{
     margin: 10px 0;
 }
-/*blockquote:before{*/
-/*}*/
-/*blockquote:after{*/
-/*}*/
-@media screen and (min-width: 1700px) {
+.perfectPancakes{
+    background: url("assets/tasty-pancakes/pancakes-bg.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 140px 0 110px 0;
+}
+.perfectPancakes .dishImg{
+    width: ;
+    max-width: 419px ;
+}
+.perfectPancakes .dishDescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--whbackground) url("assets/art-of-cake/windmill.png") bottom right no-repeat;
+    margin: 0 20px;
+    padding: 30px;
+    max-width: 550px;
+}
+.perfectPancakes h2{
+    color: #56534c;
+    font: bold var(--fontsize2) var(--mainFont);
+    text-align: center;
+}
+.perfectPancakes .subtitle{
+    font: bold var(--fontsubtitle) var(--mainFont);
+    color: var(--clSubtitle);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.dishDescription{
+    position: relative;
+}
+.dishDescription p{
+    font: var(--mainFont);
+    letter-spacing: 1px;
+}
+.perfectPancakes .sliders{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 105px 0 20px 0;
+}
+.dishImgmob{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.dishImgdesk{
+    text-align: center;
+    display: none;
+}
+.arrow{
+    color: var(--arrColor);
+    border: 1px solid var(--arrColor);
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    margin: 0 5px 0 5px;
+}
+.arrow:hover{
+    color: var(--arrColorhover);
+    border-color: var(--arrColorhover);
+}
+.cookTime{
+    height: 150px;
+    width: 150px;
+    background: var(--whbackground) url("assets/tasty-pancakes/background-ready-in.png");
+    position: relative;
+    padding: 35px 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    top:-150px;
+    -webkit-box-shadow: 2px -7px 24px -10px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 2px -7px 24px -10px rgba(0, 0, 0, 1);
+    box-shadow: 2px -7px 24px -10px rgba(0, 0, 0, 1);
+}
+.cookTime span:first-child{
+    color: var(--clSubtitle);
+    font: 200 var(--fontpara) var(--mainFont);
+    text-transform: uppercase;
+    text-align: center;
+}
+.cookTime span:nth-child(2){
+    font: bold var(--fontsize1) var(--mainFont);
+    color: var(--clAdd);
+}
+.cookTime span:nth-child(3){
+    font: bold var(--fontpara) var(--mainFont);
+    color: #979285;
+}
+@media screen and (min-width: 1200px) {
     header {
         background-size: cover;
     }
+    .dishImg{
+        clip-path: polygon(0 0, 100% 0, 100% 10%, 100% 100%, 100% 100%,20% 100%, 0 83%, 0% 30%);
+    }
+    .dishImgmob{
+        display: none;
+    }
+    .dishImgdesk{
+        display: block;
+    }
+    .dishDescription > .cookTime{
+        position: absolute;
+        right: -150px;
+        top: -70px;
+    }
+
 }
