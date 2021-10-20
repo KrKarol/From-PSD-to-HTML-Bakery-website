@@ -22,7 +22,7 @@ section{
     margin:0 auto;
 }
 
-header{
+.head{
     background: var(--whbackground) url("assets/hero/background-header.webp") no-repeat center;
     height: 640px;
     display: flex;
@@ -263,7 +263,7 @@ blockquote:after{
     font: bold var(--fontsize2) var(--mainFont);
     text-align: center;
 }
-.perfectPancakes .subtitle{
+.subtitle{
     font: bold var(--fontsubtitle) var(--mainFont);
     color: var(--clSubtitle);
     text-transform: uppercase;
@@ -312,7 +312,7 @@ blockquote:after{
 .cookTime{
     height: 150px;
     width: 150px;
-    background: var(--whbackground) url("assets/tasty-pancakes/background-ready-in.png");
+    background: var(--whbackground);
     position: relative;
     padding: 35px 55px;
     display: flex;
@@ -320,10 +320,15 @@ blockquote:after{
     justify-content: center;
     margin: 0 auto;
     align-items: center;
+}
+.cookTimePancakes{
     top:-150px;
     -webkit-box-shadow: 2px -7px 24px -10px rgba(0, 0, 0, 1);
     -moz-box-shadow: 2px -7px 24px -10px rgba(0, 0, 0, 1);
     box-shadow: 2px -7px 24px -10px rgba(0, 0, 0, 1);
+}
+.cookTimeRdy{
+    background: url("assets/tasty-pancakes/background-ready-in.png");
 }
 .cookTime span:first-child{
     color: var(--clSubtitle);
@@ -430,6 +435,33 @@ blockquote:after{
     background-color: transparent;
     margin-bottom: 55px;
     border: 1px solid var(--arrColorhover);
+}
+.menu{
+    padding: 100px 0 120px 0 ;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.menu h2{
+    font: bold var(--fontsize2) var(--mainFont);
+    color: #56534c;
+    text-align: center;
+}
+.menu .ingredient{
+    margin-bottom: 60px;
+}
+.menu .ingredientDesc{
+    letter-spacing: 1px;
+    color: #56534c;
+}
+.menu .ingredientName{
+    font: bold var(--fontpara) var(--mainFont);
+    color: #a47d5e;
+}
+.dishTime{
+    display: flex;
+
 }
 @media screen and (min-width: 1200px) {
     header {
