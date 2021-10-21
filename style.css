@@ -16,14 +16,19 @@
 *{
     margin: 0;
     padding: 0;
-/*    border: 1px solid red;*/
 }
 section{
     margin:0 auto;
 }
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .head{
     background: var(--whbackground) url("assets/hero/background-header.webp") no-repeat center;
+    background-size: cover;
     height: 640px;
     display: flex;
     flex-direction: column;
@@ -310,16 +315,18 @@ blockquote:after{
     border-color: var(--arrColorhover);
 }
 .cookTime{
-    height: 150px;
-    width: 150px;
-    background: var(--whbackground);
+    height: 200px;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.8);
     position: relative;
-    padding: 35px 55px;
     display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    box-sizing: border-box;
     flex-direction: column;
     justify-content: center;
-    margin: 0 auto;
     align-items: center;
+
 }
 .cookTimePancakes{
     top:-150px;
@@ -328,21 +335,25 @@ blockquote:after{
     box-shadow: 2px -7px 24px -10px rgba(0, 0, 0, 1);
 }
 .cookTimeRdy{
-    background: url("assets/tasty-pancakes/background-ready-in.png");
+    background: url("assets/tasty-pancakes/background-ready-in.png") bottom center;
 }
-.cookTime span:first-child{
+.cookTimeRdy span:first-child,.cookTime span:first-child{
     color: var(--clSubtitle);
     font: 200 var(--fontpara) var(--mainFont);
     text-transform: uppercase;
     text-align: center;
 }
-.cookTime span:nth-child(2){
+.cookTimeRdy span:nth-child(2){
     font: bold var(--fontsize1) var(--mainFont);
     color: var(--clAdd);
+    margin: 0 0 -20px 0;
 }
-.cookTime span:nth-child(3){
-    font: bold var(--fontpara) var(--mainFont);
+.cookTimeRdy span:nth-child(3), .cookTime span:nth-child(3){
+    font: var(--fontpara) var(--mainFont);
     color: #979285;
+}
+.dishTimeCook span:nth-child(2){
+    font: var(--fontsize2) var(--mainFont);
 }
 
 .breakfast{
@@ -439,9 +450,8 @@ blockquote:after{
 .menu{
     padding: 100px 0 120px 0 ;
     text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    background: #f3f1e9 url("assets/jibaritoSandwich/Vektor-Smartobjekt.png") top center no-repeat;
+
 }
 .menu h2{
     font: bold var(--fontsize2) var(--mainFont);
@@ -461,13 +471,116 @@ blockquote:after{
 }
 .dishTime{
     display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+.fullRecipe{
+    position: relative;
+}
+.fullRecipe .dishImg {
+    position: relative;
+    width: 100%;
+}
+.fullRecipe .btnDish{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--whbackground);
+    color: var(--clAdd);
+    border: 1px dashed var(--clAdd);
+}
+footer{
+    background-color: #f3f1e9;
+}
+footer .footer-nav{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    list-style-type:none;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+footer .footer-nav li{
+    flex: 1;
+    padding: 20px 0;
+    border-top: 1px solid var(--btnColor);
+
+}
+
+footer .footer-nav li a{
+    font: var(--fontsubtitle) var(--mainFont);
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--arrColorhover);
+    text-transform: uppercase;
+}
+
+/*}*/
+/*footer{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+/*.footer ul{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    list-style-type: none;*/
+/*    border: 1px solid red;*/
+/*}*/
+/*footer>ul>li {*/
+/*    padding: 30px 0;*/
+/*    border-top: 1px solid #c2beba;*/
+/*    border-bottom: 1px solid #c2beba;*/
+/*    flex: 1;*/
+/*}*/
+/*footer >ul >li:nth-child(4){*/
+/*    border: none;*/
+/*}*/
+@media screen and (min-width: 950px) {
+
+    .dishTime{
+        position: absolute;
+        flex-direction: column;
+        top: -20px;
+        right: 9px;
+    }
+    .fullRecipe{
+        margin: 70px 0 0 130px;
+    }
+    .fullRecipe .dishImg{
+        height: 570px;
+    }
+    .dishTimeReady{
+        -webkit-box-shadow: 3px 13px 19px -16px rgba(66, 68, 90, 0.39);
+        -moz-box-shadow: 3px 13px 19px -16px rgba(66, 68, 90, 0.39);
+        box-shadow: 3px 13px 19px -16px rgba(66, 68, 90, 0.39);
+    }
+    .fullRecipe .btnDish{
+        left: 80px;
+    }
+    footer .footer-nav{
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 70px;
+    }
+    footer .footer-nav li{
+        border-bottom: 1px solid var(--btnColor);
+    }
+    footer .footer-nav li:nth-child(4){
+        border:none;
+
+    }
 }
 @media screen and (min-width: 1200px) {
     header {
         background-size: cover;
     }
-    .dishImg{
+    .perfectPancakes .dishImg{
         clip-path: polygon(0 0, 100% 0, 100% 10%, 100% 100%, 100% 100%,20% 100%, 0 83%, 0% 30%);
     }
     .dishImgmob{
@@ -484,5 +597,4 @@ blockquote:after{
     .dishDescription p{
         margin: 0;
     }
-
 }
