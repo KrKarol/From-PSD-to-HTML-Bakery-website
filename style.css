@@ -1,6 +1,6 @@
 :root {
     --whbackground: #fcfcf9;
-    --clSubtitle: #a47d5e;
+    --clSubtitle: #c8a593;
     --clAdd: #dfc691;
     --arrColor: #d8bba3;
     --arrColorhover: #56534c;
@@ -11,6 +11,7 @@
     --fontsize3: 30px;
     --fontpara: 24px;
     --fontsubtitle: 14px;
+    --navColor: rgba(86, 83, 76, 0.52);
 
 }
 *{
@@ -34,30 +35,67 @@ section{
     flex-direction: column;
 }
 .navbar{
-    position: relative;
-    z-index: 2;
-    background-color: var(--btnColor);
-    display: flex;
-    height: 44px;
-    padding: 15px 15px;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-nav.active{
-    position: absolute;
-    top: 0;
-    height: 100vh;
     width: 100%;
-    margin:0;
-    background-color: #2c3e50;
+    box-sizing: border-box;
+    background-color: var(--navColor);
+    padding: 20px;
+    position: fixed;
+    z-index: 999;
 }
-nav {
-    list-style-type:none;
+.navbar ul {
+    list-style-type: none;
+}
+.navbarMain{
+    height: calc(100vh - 68px);
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background-color: #56534c ;
+    z-index: 1;
+    transform: translateX(-100%);
+    transition: all .2s ease;
 }
-nav ul{ display: none}
+.navActivation{
+ transform: translateX(0);
+}
+.navbarMain li{
+    text-align: center;
+    display: flex;
+}
+.navbarMain li a {
+    font: var(--fontsubtitle) var(--mainFont);
+    color: var(--whbackground);
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
 
+.navbarMain li a:hover{
+    color: var(--clAdd);
+}
+.navbarSocialMedia{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.navbarSocialMedia li:first-child a,.navbarSocialMedia li:nth-child(2) a, .navbarSocialMedia li:last-child a {
+    background-image: url("assets/icons.png");
+    background-repeat: no-repeat;
+}
+.navbarSocialMedia li:first-child a{
+    background-position: 23px 20px;
+}
+.navbarSocialMedia li:nth-child(2) a{
+    background-position: -65px 20px;
+}
+.navbarSocialMedia li:last-child a{
+    background-position: -165px 20px;
+}
 /*hamburger*/
 .row .three{
     padding: 80px 30px;
@@ -68,7 +106,11 @@ nav ul{ display: none}
     color: #ecf0f1;
     text-align: center;
 }
-
+.hamburger{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
 .hamburger .line{
     width: 50px;
     height: 5px;
@@ -154,7 +196,6 @@ nav ul{ display: none}
 
 .artOfCakeSection{
     background: var(--whbackground);
-    padding: 50px 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -243,9 +284,9 @@ blockquote:after{
     margin: 10px 0;
 }
 .perfectPancakes{
-    background: url("assets/tasty-pancakes/pancakes-bg.png");
+    background: url("assets/tasty-pancakes/pancakes-bg.png") center;
+
     background-size: cover;
-    background-position: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -326,7 +367,6 @@ blockquote:after{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 .cookTimePancakes{
     top:-150px;
@@ -373,8 +413,9 @@ blockquote:after{
     letter-spacing: 3px;
 }
 .breakfast .subtitles{
-    font: bold var(--fontsubtitle) var(--mainFont);
+    font: bold 16px var(--mainFont);
     color: var(--clSubtitle);
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 .breakfast .nameofDish{
@@ -391,6 +432,8 @@ blockquote:after{
 }
 .breakfast .info{
     background: var(--whbackground) url("assets/Breakfast/vektor-smartobjekt.png") no-repeat;
+    width: auto;
+    height: auto;
     background-position: 330px 107%;
     max-width: 438px;
     padding: 20px 55px;
@@ -400,8 +443,14 @@ blockquote:after{
     align-items: center;
     outline: 1px dashed #9e9c93;
     outline-offset: -10px;
-    margin: 50px 20px;
+    position: relative;
+    -webkit-box-shadow: 34px 58px 63px -4px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 34px 58px 63px -4px rgba(0, 0, 0, 1);
+    box-shadow: 34px 58px 63px -4px rgba(0, 0, 0, 1);
+    z-index: 2;
+    margin: 50px 20px 50px 20px;
 }
+
 .breakfast .info .infoHead{
     height: 95px;
     display: flex;
@@ -470,11 +519,7 @@ blockquote:after{
     color: #a47d5e;
 }
 .dishTime{
-    display: flex;
-    flex-wrap:wrap;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display: none;
 }
 
 .fullRecipe{
@@ -544,10 +589,14 @@ footer .footer-nav li a{
 @media screen and (min-width: 950px) {
 
     .dishTime{
+        display: flex;
         position: absolute;
         flex-direction: column;
         top: -20px;
-        right: 9px;
+        right: 15px;
+        flex-wrap:wrap;
+        justify-content: center;
+        align-items: center;
     }
     .fullRecipe{
         margin: 70px 0 0 130px;
@@ -576,7 +625,74 @@ footer .footer-nav li a{
 
     }
 }
-@media screen and (min-width: 1200px) {
+
+@media screen and (min-width: 1050px){
+    .hamburger{
+        display: none;
+    }
+    .navbar{
+        width: 100%;
+        box-sizing: border-box;
+        background-color: var(--navColor);
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        padding: 0 30px;
+    }
+    .logo{
+        display: flex;
+        align-items: center;
+    }
+    .navbarMain{
+        display: flex;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        background-color: transparent;
+        transform: translateX(0);
+        flex-wrap: nowrap;
+    }
+    .navbarMain > ul{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .navActivation{
+        transform: translateX(0);
+    }
+    .navbarMain .navMain li{
+        text-align: center;
+        border: none;
+        margin: 0 30px;
+    }
+    .navbarMain .navMain li a {
+        font: var(--fontsubtitle) var(--mainFont);
+        color: var(--whbackground);
+        text-decoration: none;
+        text-transform: uppercase;
+        width: auto;
+        height: 100%;
+        padding: 20px 0;
+
+    }
+    .navbarMain li a:hover{
+        color: var(--clAdd);
+    }
+    .navbarSocialMedia{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    .perfectPancakes .dishDescription{
+        margin:0
+    }
+    .dish{
+        margin: 65px 0 65px 0;
+    }
+
+}
+@media screen and (min-width: 1250px) {
     header {
         background-size: cover;
     }
@@ -591,10 +707,13 @@ footer .footer-nav li a{
     }
     .dishDescription > .cookTime{
         position: absolute;
-        right: -120px;
+        right: -70px;
         top: -70px;
     }
     .dishDescription p{
         margin: 0;
+    }
+    .breakfast .info{
+        margin-left: 300px;
     }
 }
